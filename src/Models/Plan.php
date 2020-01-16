@@ -9,7 +9,6 @@ use Rinvex\Support\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 use Rinvex\Cacheable\CacheableEloquent;
-use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Spatie\EloquentSortable\SortableTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -71,7 +70,6 @@ class Plan extends Model implements Sortable
 {
     use HasSlug;
     use SortableTrait;
-    use HasTranslations;
     use ValidatingTrait;
     use CacheableEloquent;
 
@@ -128,16 +126,6 @@ class Plan extends Model implements Sortable
     protected $observables = [
         'validating',
         'validated',
-    ];
-
-    /**
-     * The attributes that are translatable.
-     *
-     * @var array
-     */
-    public $translatable = [
-        'name',
-        'description',
     ];
 
     /**

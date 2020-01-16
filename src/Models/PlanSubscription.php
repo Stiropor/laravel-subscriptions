@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 use Rinvex\Cacheable\CacheableEloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Rinvex\Subscriptions\Services\Period;
-use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Rinvex\Subscriptions\Traits\BelongsToPlan;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -67,7 +66,6 @@ class PlanSubscription extends Model
 {
     use HasSlug;
     use BelongsToPlan;
-    use HasTranslations;
     use ValidatingTrait;
     use CacheableEloquent;
 
@@ -110,16 +108,6 @@ class PlanSubscription extends Model
     protected $observables = [
         'validating',
         'validated',
-    ];
-
-    /**
-     * The attributes that are translatable.
-     *
-     * @var array
-     */
-    public $translatable = [
-        'name',
-        'description',
     ];
 
     /**
