@@ -9,7 +9,6 @@ use Spatie\Sluggable\SlugOptions;
 use Rinvex\Support\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
-use Rinvex\Cacheable\CacheableEloquent;
 use Rinvex\Subscriptions\Services\Period;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Spatie\EloquentSortable\SortableTrait;
@@ -56,7 +55,6 @@ class PlanFeature extends Model implements Sortable
     use BelongsToPlan;
     use SortableTrait;
     use ValidatingTrait;
-    use CacheableEloquent;
 
     /**
      * {@inheritdoc}
